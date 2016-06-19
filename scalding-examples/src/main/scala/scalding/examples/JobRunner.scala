@@ -1,4 +1,4 @@
-package jobs
+package scalding.examples
 // Hadoop
 import org.apache.hadoop
 

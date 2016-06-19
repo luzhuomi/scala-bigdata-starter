@@ -1,3 +1,5 @@
+package hadoop.examples
+
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.Path
 import org.apache.hadoop.io.IntWritable
@@ -53,3 +55,5 @@ object WordCount {
   }
 
 }
+
+// yarn jar target/scala-2.11/hadoop-examples-assembly-0.1.0.jar hadoop.examples.WordCount /input/ /output/

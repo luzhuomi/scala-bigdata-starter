@@ -28,6 +28,7 @@ mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
     case PathList("log4j.properties") => MergeStrategy.discard
     case PathList("defaults.yaml", xs @ _*) => MergeStrategy.discard
     case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+    case PathList("LICENSE", xs @ _*) => MergeStrategy.discard
     case _ => MergeStrategy.last // leiningen build files
   }
 }
