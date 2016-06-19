@@ -1,4 +1,7 @@
+package jobs
+
 import com.twitter.scalding._
+import com.twitter.scalding.Args
 
 class WordCount(args: Args) extends Job(args) {
 	TypedPipe.from(TextLine(args("input")))
