@@ -10,3 +10,8 @@ class WordCount(args: Args) extends Job(args) {
 	.size
 	.write(TypedTsv(args("output")))
 }
+
+
+/* 
+yarn jar target/scala-2.11/scalding-examples-assembly-0.1.0.jar jobs.WordCount --hdfs --input /input/ --output /output/
+*/
