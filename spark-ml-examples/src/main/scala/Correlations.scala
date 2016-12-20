@@ -16,4 +16,5 @@ object Correlations {
 
 	val vec1:RDD[Vector] = MLUtils.loadVectors(sc, "data/basic/vector1.txt")
 	val correlation2: Matrix = Statistics.corr(vec1, "pearson")
+	
 }
