@@ -10,10 +10,21 @@ import org.apache.spark.mllib.util.MLUtils
 
 object TweetSVMFilter {
 
+	val vector_fixed_size = 30 // fixed the size of each vector. 
+	// if vectors have different sizes, the gradient descent algorithm will fail
+	// cut off if it exceeds, pad zeros if it has less than 30 elements
+
 	def hash(str:String):Int = str.toList.foldLeft(2147483647)((h,c) => 31*h + c)
 	
-	def to_words(tweet:String):Array[String] = tweet.split(" ").toArray 
+	def to_words(tweet:String):List[String] = tweet.split(" ").toList
 
+	def pad_cap(xs:List[Double],size:Int):List[Double] = xs match 
+	{
+		case Nil if size > 0 => List.fill(size)(0.0) // fill the rest with 0.0
+		case Nil             => Nil 
+		case (y::ys) if size == 0 => Nil
+		case (y::ys)              => y::(pad_cap(ys,size-1))
+	}
 
 	def main(args: Array[String]) {
 		
@@ -23,8 +34,16 @@ object TweetSVMFilter {
 		val posTXT:RDD[String] = sc.textFile("data/tweet/label_data/Kpop/*.txt").sample(false,0.1)
 		val negTXT:RDD[String] = sc.textFile("data/tweet/label_data/othertweet/*.txt").sample(false,0.1)
 		// convert the training data to labeled points
-		val posLP:RDD[LabeledPoint] = posTXT.map( (twt:String) => LabeledPoint(1.0, Vectors.dense(to_words(twt).map(w => hash(w).toDouble))))
-		val negLP:RDD[LabeledPoint] = negTXT.map( (twt:String) => LabeledPoint(0.0, Vectors.dense(to_words(twt).map(w => hash(w).toDouble))))
+		val posLP:RDD[LabeledPoint] = posTXT.map( (twt:String) => 
+		{
+			val ws = to_words(twt).map(w => hash(w).toDouble)
+			LabeledPoint(1.0, Vectors.dense(pad_cap(ws ,vector_fixed_size).toArray))
+		})
+		val negLP:RDD[LabeledPoint] = negTXT.map( (twt:String) => 
+		{ 
+			val ws = to_words(twt).map(w => hash(w).toDouble)
+			LabeledPoint(0.0, Vectors.dense(pad_cap(ws ,vector_fixed_size).toArray))
+		})
 		val data = negLP ++ posLP
 
 
@@ -34,7 +53,7 @@ object TweetSVMFilter {
 		val test = splits(1)
 
 		// Run training algorithm to build the model
-		val numIterations = 100
+		val numIterations = 10 // 100
 		val model = SVMWithSGD.train(training, numIterations)
 
 		// Clear the default threshold.
@@ -51,6 +70,6 @@ object TweetSVMFilter {
 		val auROC = metrics.areaUnderROC()
 
 		println("Area under ROC = " + auROC)	
-		// sc.stop
+		sc.stop
 	}
 }
