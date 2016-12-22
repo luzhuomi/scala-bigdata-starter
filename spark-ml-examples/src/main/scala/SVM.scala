@@ -8,7 +8,7 @@ import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.util.MLUtils
 
 object SVM {
-	def main(args: Array[String]) {
+	// def main(args: Array[String]) {
 		
 		// local mode
 		val sc = new SparkContext("local", "shell")	
@@ -46,5 +46,5 @@ object SVM {
 
 		println("Area under ROC = " + auROC)	
 		sc.stop
-	}
+	// }
 }
