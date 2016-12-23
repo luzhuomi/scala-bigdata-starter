@@ -29,10 +29,21 @@ object TweetSVMFilter {
 	def main(args: Array[String]) {
 		
 		// local mode
+		
 		val sc = new SparkContext("local", "shell")	
 		// Load training data in LIBSVM format.
-		val posTXT:RDD[String] = sc.textFile("data/tweet/label_data/Kpop/*.txt").sample(false,0.1)
-		val negTXT:RDD[String] = sc.textFile("data/tweet/label_data/othertweet/*.txt").sample(false,0.1)
+		val posTXT:RDD[String] = sc.textFile("data/tweet/label_data/Kpop/*.txt") // .sample(false,0.1)
+		val negTXT:RDD[String] = sc.textFile("data/tweet/label_data/othertweet/*.txt") // .sample(false,0.1)
+	
+
+		// cluster mode
+		// val conf = new SparkConf().setAppName("Spark SVM")
+	    // val sc = new SparkContext(conf)
+		// val posTXT:RDD[String] = sc.textFile("hdfs://127.0.0.1:9000/data/tweet/label_data/Kpop/*.txt") // .sample(false,0.1)
+		// val negTXT:RDD[String] = sc.textFile("hdfs://127.0.0.1:9000/data/tweet/label_data/othertweet/*.txt") // .sample(false,0.1)
+		 
+
+
 		// convert the training data to labeled points
 		val posLP:RDD[LabeledPoint] = posTXT.map( (twt:String) => 
 		{
@@ -53,7 +64,7 @@ object TweetSVMFilter {
 		val test = splits(1)
 
 		// Run training algorithm to build the model
-		val numIterations = 10 // 100
+		val numIterations = 20
 		val model = SVMWithSGD.train(training, numIterations)
 
 		// Clear the default threshold.
