@@ -30,7 +30,7 @@ object TweetSVMFilter {
 		
 		// local mode
 		
-		val sc = new SparkContext("local", "shell")	
+		val sc = new SparkContext("local", "shell")
 		// Load training data in LIBSVM format.
 		val posTXT:RDD[String] = sc.textFile("data/tweet/label_data/Kpop/*.txt") // .sample(false,0.1)
 		val negTXT:RDD[String] = sc.textFile("data/tweet/label_data/othertweet/*.txt") // .sample(false,0.1)
@@ -64,7 +64,7 @@ object TweetSVMFilter {
 		val test = splits(1)
 
 		// Run training algorithm to build the model
-		val numIterations = 20
+		val numIterations = 10
 		val model = SVMWithSGD.train(training, numIterations)
 
 		// Clear the default threshold.
