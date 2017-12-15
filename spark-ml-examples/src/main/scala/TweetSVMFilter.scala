@@ -18,13 +18,8 @@ object TweetSVMFilter {
 
 	def to_words(tweet:String):List[String] = tweet.split(" ").toList
 
-	def pad_cap(xs:List[Double],size:Int):List[Double] = xs match
-	{
-		case Nil if size > 0 => List.fill(size)(0.0) // fill the rest with 0.0
-		case Nil             => Nil
-		case (y::ys) if size == 0 => Nil
-		case (y::ys)              => y::(pad_cap(ys,size-1))
-	}
+	def pad_cap(xs:List[Double],size:Int):List[Double] =
+		xs.take(size) ++ List.fill(size-xs.length)(0.0)
 
 	def main(args: Array[String]) {
 
@@ -39,8 +34,8 @@ object TweetSVMFilter {
 		// cluster mode
 		val conf = new SparkConf().setAppName("Spark SVM")
 		val sc = new SparkContext(conf)
-		val posTXT:RDD[String] = sc.textFile("hdfs://127.0.0.1:9000/data/tweet/label_data/Kpop/*.txt") // .sample(false,0.1)
-		val negTXT:RDD[String] = sc.textFile("hdfs://127.0.0.1:9000/data/tweet/label_data/othertweet/*.txt") // .sample(false,0.1)
+		val posTXT:RDD[String] = sc.textFile("hdfs://127.0.0.1:9000/data/tweet/label_data/Kpop/*.txt").sample(false,0.1)
+		val negTXT:RDD[String] = sc.textFile("hdfs://127.0.0.1:9000/data/tweet/label_data/othertweet/*.txt").sample(false,0.1)
 
 
 
