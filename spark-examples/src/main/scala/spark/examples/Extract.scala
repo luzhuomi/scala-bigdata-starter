@@ -21,8 +21,8 @@ hdfs dfs -put data/extract/input.txt /data/extract/
 
 object Extract {
 	val opat = compile("^(.*) ([A-Za-z]{2}) ([0-9]{5})(-[0-9]{4})?$")
-	val hdfs_nn = "10.1.0.1"
-	// val hdfs_nn = "127.0.0.1"
+	// val hdfs_nn = "10.1.0.1"
+	val hdfs_nn = "127.0.0.1"
 	def main(args: Array[String]) = {
 
 		opat match 
@@ -51,5 +51,5 @@ object Extract {
 
 /*
 sbt assembly
-/opt/spark-1.4.1-bin-hadoop2.6/bin/spark-submit --class Extract target/scala-2.10/spark-examples-assembly-0.1.0.jar
+/opt/spark-2.2.1-bin-hadoop2.7/bin/spark-submit --class Extract target/scala-2.11/spark-examples-assembly-0.1.0.jar
 */

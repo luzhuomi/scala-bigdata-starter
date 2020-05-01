@@ -26,5 +26,5 @@ object SimpleApp {
 }
 
 /*
-/opt/spark-1.4.1-bin-hadoop2.6/bin/spark-submit  --class SimpleApp target/scala-2.10/spark-examples_2.10-0.1.0.jar
+/opt/spark-2.2.1-bin-hadoop2.7/bin/spark-submit  --class SimpleApp target/scala-2.11/spark-examples_2.11-0.1.0.jar
 */
