@@ -10,7 +10,7 @@ scalaVersion := "2.12.3"
 
 crossScalaVersions := Seq("2.9.2", "2.10.3", "2.11.3")
 
-sbtVersion in Global := "1.0.3"
+sbtVersion in Global := "1.3.0"
 
 resolvers += "Apache HBase" at "https://repository.apache.org/content/repositories/releases"
 
@@ -38,7 +38,7 @@ scalaCompilerBridgeSource := {
   ("org.scala-sbt" % "compiler-interface" % sv % "component").sources
 }
 
-crossSbtVersions := Vector("0.13.16", "1.0.3")
+crossSbtVersions := Vector("0.13.16", "1.3.0")
 
 seq(assemblySettings: _*)
 
