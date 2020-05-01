@@ -15,7 +15,7 @@ object Data {
 	// an RDD of doubles 
 	val seriesX:RDD[Double] = sc.textFile("data/basic/series1.txt").map(_.toDouble)
 	// collecting RDD data into an local array
-	val arr:Array[Double] = seriesX.toArray
+	val arr:Array[Double] = seriesX.collect
 
 	/////////////////////////////////////////////////////////////////////////////////////
 	// Local vectors 
