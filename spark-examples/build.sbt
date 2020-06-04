@@ -1,4 +1,3 @@
-import AssemblyKeys._
 
 name := "spark-examples"
 
@@ -8,9 +7,7 @@ version := "0.1.0"
 
 scalaVersion := "2.11.12"
 
-crossScalaVersions := Seq("2.9.2", "2.10.3", "2.11.12")
-
-sbtVersion in Global := "1.3.0"
+sbtVersion in Global := "1.3.12"
 
 resolvers += "Apache HBase" at "https://repository.apache.org/content/repositories/releases"
 
@@ -33,16 +30,6 @@ libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.4" // scala license
 
 libraryDependencies += "com.github.luzhuomi" %% "scalazparsec" % "0.1.4"  // apache license
 
-scalaCompilerBridgeSource := {
-  val sv = appConfiguration.value.provider.id.version
-  ("org.scala-sbt" % "compiler-interface" % sv % "component").sources
-}
-
-crossSbtVersions := Vector("0.13.16", "1.3.0")
-
-seq(assemblySettings: _*)
-
-// mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
 
 mergeStrategy in assembly := 
   {

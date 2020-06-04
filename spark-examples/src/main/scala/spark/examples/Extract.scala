@@ -5,7 +5,6 @@ import org.apache.spark.rdd._
 import com.github.luzhuomi.regex.PDeriv._ // requires sbt assembly
 
 
-
 /*
 To extract US address from a file of address
 
@@ -18,6 +17,7 @@ hdfs dfs -rm -r /data/extract/input.txt
 hdfs dfs -put data/extract/input.txt /data/extract/
 
 */
+
 
 object Extract {
 	val opat = compile("^(.*) ([A-Za-z]{2}) ([0-9]{5})(-[0-9]{4})?$")
@@ -48,6 +48,7 @@ object Extract {
 		} 
 	}
 }
+
 
 /*
 sbt assembly
