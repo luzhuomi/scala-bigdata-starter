@@ -1,0 +1,914 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n# A crash course of Zeppelin Notebook\n\nSimilar to Jupyter Notebook, there are at least two kinds of Cells in a Zeppelin Notebook.\n\n1. Markdown Cell - start with `%md`\n2. Code Cell - without any starting annotation\n\n\nTo run a cell, press the \"play\" button on its right, or press \"shift-enter\"",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:05:44.310",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eA crash course of Zeppelin Notebook\u003c/h1\u003e\n\u003cp\u003eSimilar to Jupyter Notebook, there are at least two kinds of Cells in a Zeppelin Notebook.\u003c/p\u003e\n\u003col\u003e\n  \u003cli\u003eMarkdown Cell - start with \u003ccode\u003e%md\u003c/code\u003e\u003c/li\u003e\n  \u003cli\u003eCode Cell - without any starting annotation\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eTo run a cell, press the \u0026ldquo;play\u0026rdquo; button on its right, or press \u0026ldquo;shift-enter\u0026rdquo;\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625110023_541075899",
+      "id": "20200608-220510_976492276",
+      "dateCreated": "2020-06-08 22:05:10.023",
+      "dateStarted": "2020-06-08 22:05:44.311",
+      "dateFinished": "2020-06-08 22:05:44.317",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\nprintln(\"This is a code block\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:06:04.860",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "This is a code block\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625144306_1168734736",
+      "id": "20200608-220544_171874269",
+      "dateCreated": "2020-06-08 22:05:44.306",
+      "dateStarted": "2020-06-08 22:06:04.872",
+      "dateFinished": "2020-06-08 22:06:05.052",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n# A Tweet classifier\n\nThe school have collected some twitter data based on the keyword \"jae\".  However the term \"jae\" could refer to some Korean celebrities having \"jae\" as part of their names, or to joint admission exercise in Singapore. \n\nThe task here is to build a classifier to differentiate the KPOP tweets mentioning \"jae\" as a person\u0027s name or otherwise.\n\n\n\nFor example, the following tweet message falls into the category of Korean Pop because it seems talking about a person\u0027s name \n```\ncrazy cool jae s lee\u0027s pic of street singer reflected in raindrops tuesday on 2nd ave  \n```\nOn the other hand, the following tweet is not revelant to KPOP. \n```\naccident closes jae valley rd drivers advised to avoid area seek alternate routes\n```\nTo achieve the goal, we need to develop a classifier, which is a supervised machine learning technique. In this example, we consider using Support Vector Machine (SVM) as the classifier algorithm. On the higher level, we need to \"train\" the model with some manually labelled data and perform some tests against the trained model. As part of the input requirement the SVM expect the input data to represented as a label (either yes or no, 1 or 0) accompanied by the feature vector. The feature vector is a vector of values which uniquely differentiate one entry from another ideally. In the machine learning context, features have to be fixed by the programmers. \n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:06:24.420",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eA Tweet classifier\u003c/h1\u003e\n\u003cp\u003eThe school have collected some twitter data based on the keyword \u0026ldquo;jae\u0026rdquo;. However the term \u0026ldquo;jae\u0026rdquo; could refer to some Korean celebrities having \u0026ldquo;jae\u0026rdquo; as part of their names, or to joint admission exercise in Singapore. \u003c/p\u003e\n\u003cp\u003eThe task here is to build a classifier to differentiate the KPOP tweets mentioning \u0026ldquo;jae\u0026rdquo; as a person\u0026rsquo;s name or otherwise.\u003c/p\u003e\n\u003cp\u003eFor example, the following tweet message falls into the category of Korean Pop because it seems talking about a person\u0026rsquo;s name \u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ecrazy cool jae s lee\u0026#39;s pic of street singer reflected in raindrops tuesday on 2nd ave  \n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eOn the other hand, the following tweet is not revelant to KPOP. \u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eaccident closes jae valley rd drivers advised to avoid area seek alternate routes\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eTo achieve the goal, we need to develop a classifier, which is a supervised machine learning technique. In this example, we consider using Support Vector Machine (SVM) as the classifier algorithm. On the higher level, we need to \u0026ldquo;train\u0026rdquo; the model with some manually labelled data and perform some tests against the trained model. As part of the input requirement the SVM expect the input data to represented as a label (either yes or no, 1 or 0) accompanied by the feature vector. The feature vector is a vector of values which uniquely differentiate one entry from another ideally. In the machine learning context, features have to be fixed by the programmers.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625158853_-1965081276",
+      "id": "20200608-220558_1321651893",
+      "dateCreated": "2020-06-08 22:05:58.853",
+      "dateStarted": "2020-06-08 22:06:24.422",
+      "dateFinished": "2020-06-08 22:06:24.436",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Importing and Setup\n\nLet\u0027s import all the required libraries and set the hadoop file system name node IP.\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:08:03.855",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eImporting and Setup\u003c/h2\u003e\n\u003cp\u003eLet\u0026rsquo;s import all the required libraries and set the hadoop file system name node IP.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625184410_468177584",
+      "id": "20200608-220624_1785578549",
+      "dateCreated": "2020-06-08 22:06:24.410",
+      "dateStarted": "2020-06-08 22:08:03.856",
+      "dateFinished": "2020-06-08 22:08:03.858",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.SparkContext\nimport org.apache.spark.SparkConf\nimport org.apache.spark.rdd._\n\nimport org.apache.spark.mllib.classification.SVMWithSGD\nimport org.apache.spark.mllib.evaluation.BinaryClassificationMetrics\nimport org.apache.spark.mllib.regression.LabeledPoint\nimport org.apache.spark.mllib.linalg.Vectors\nimport org.apache.spark.mllib.util.MLUtils\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:08:08.770",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.SparkContext\nimport org.apache.spark.SparkConf\nimport org.apache.spark.rdd._\nimport org.apache.spark.mllib.classification.SVMWithSGD\nimport org.apache.spark.mllib.evaluation.BinaryClassificationMetrics\nimport org.apache.spark.mllib.regression.LabeledPoint\nimport org.apache.spark.mllib.linalg.Vectors\nimport org.apache.spark.mllib.util.MLUtils\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625202518_-278401876",
+      "id": "20200608-220642_18024657",
+      "dateCreated": "2020-06-08 22:06:42.518",
+      "dateStarted": "2020-06-08 22:08:08.783",
+      "dateFinished": "2020-06-08 22:08:09.009",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md \n\n## Preparing for the data\n\nWe can\u0027t feed the string data directly to the classifier, we have to convert them into sume vector or array representation.\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:08:48.857",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003ePreparing for the data\u003c/h2\u003e\n\u003cp\u003eWe can\u0026rsquo;t feed the string data directly to the classifier, we have to convert them into sume vector or array representation.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625288770_-1341342995",
+      "id": "20200608-220808_680736841",
+      "dateCreated": "2020-06-08 22:08:08.770",
+      "dateStarted": "2020-06-08 22:08:48.858",
+      "dateFinished": "2020-06-08 22:08:48.870",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\nval vector_fixed_size \u003d 30 // fixed the size of each vector.\n\t// if vectors have different sizes, the gradient descent algorithm will fail\n\t// cut off if it exceeds, pad zeros if it has less than 30 elements",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:09:15.845",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "vector_fixed_size: Int \u003d 30\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625328848_1107586569",
+      "id": "20200608-220848_755408005",
+      "dateCreated": "2020-06-08 22:08:48.848",
+      "dateStarted": "2020-06-08 22:09:15.858",
+      "dateFinished": "2020-06-08 22:09:16.053",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md \n\nWe define some helper functions as follows. \n\n* The `hash` function hashes a string value into an integer. \n* The `to_words` function turns a sentence into words. \n* The `pad_cap` function takes a list of double values as input `xs` and a size variable `size`. If the size of the input list exceeds the given size, it truncates the input list down to the size. If the size of the input falls below `size`, it pads the remaining spaces with zeros. This is to ensure all vectors to the SVM have the same size. ",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:09:37.854",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eWe define some helper functions as follows. \u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003eThe \u003ccode\u003ehash\u003c/code\u003e function hashes a string value into an integer.\u003c/li\u003e\n  \u003cli\u003eThe \u003ccode\u003eto_words\u003c/code\u003e function turns a sentence into words.\u003c/li\u003e\n  \u003cli\u003eThe \u003ccode\u003epad_cap\u003c/code\u003e function takes a list of double values as input \u003ccode\u003exs\u003c/code\u003e and a size variable \u003ccode\u003esize\u003c/code\u003e. If the size of the input list exceeds the given size, it truncates the input list down to the size. If the size of the input falls below \u003ccode\u003esize\u003c/code\u003e, it pads the remaining spaces with zeros. This is to ensure all vectors to the SVM have the same size.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625357588_1613858699",
+      "id": "20200608-220917_1893061921",
+      "dateCreated": "2020-06-08 22:09:17.588",
+      "dateStarted": "2020-06-08 22:09:37.855",
+      "dateFinished": "2020-06-08 22:09:37.863",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def hash(str:String):Int \u003d str.toList.foldLeft(2147483647)((h,c) \u003d\u003e 31*h + c)\n\ndef to_words(tweet:String):List[String] \u003d tweet.split(\" \").toList\n\ndef pad_cap(xs:List[Double],size:Int):List[Double] \u003d\n\txs.take(size) ++ List.fill(size-xs.length)(0.0)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:10:32.425",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "hash: (str: String)Int\nto_words: (tweet: String)List[String]\npad_cap: (xs: List[Double], size: Int)List[Double]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625380426_-175545570",
+      "id": "20200608-220940_702965098",
+      "dateCreated": "2020-06-08 22:09:40.426",
+      "dateStarted": "2020-06-08 22:10:32.442",
+      "dateFinished": "2020-06-08 22:10:33.801",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md \n\nWe load the data from the HDFS. The `.sample(false,0.1)` is to perform sampling on the input dataset. (Otherwise, we will run into a disk full problem in our toy VM).",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:11:27.782",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eWe load the data from the HDFS. The \u003ccode\u003e.sample(false,0.1)\u003c/code\u003e is to perform sampling on the input dataset. (Otherwise, we will run into a disk full problem in our toy VM).\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625454668_1098197306",
+      "id": "20200608-221054_351978374",
+      "dateCreated": "2020-06-08 22:10:54.668",
+      "dateStarted": "2020-06-08 22:11:27.783",
+      "dateFinished": "2020-06-08 22:11:27.791",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val posTXT:RDD[String] \u003d sc.textFile(\"hdfs://127.0.0.1:9000/data/tweet/label_data/Kpop/*.txt\").sample(false,0.1)\nval negTXT:RDD[String] \u003d sc.textFile(\"hdfs://127.0.0.1:9000/data/tweet/label_data/othertweet/*.txt\").sample(false,0.1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:11:30.942",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "posTXT: org.apache.spark.rdd.RDD[String] \u003d PartitionwiseSampledRDD[70] at sample at \u003cconsole\u003e:35\nnegTXT: org.apache.spark.rdd.RDD[String] \u003d PartitionwiseSampledRDD[73] at sample at \u003cconsole\u003e:36\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625442627_-2098304701",
+      "id": "20200608-221042_2118879943",
+      "dateCreated": "2020-06-08 22:10:42.627",
+      "dateStarted": "2020-06-08 22:11:30.959",
+      "dateFinished": "2020-06-08 22:11:31.439",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\nNext we apply our helper functions to label the data, namely positive data and negative data. Finally we join the positive and negative data together.\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:12:06.163",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eNext we apply our helper functions to label the data, namely positive data and negative data. Finally we join the positive and negative data together.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625513704_2101355746",
+      "id": "20200608-221153_167701053",
+      "dateCreated": "2020-06-08 22:11:53.704",
+      "dateStarted": "2020-06-08 22:12:06.164",
+      "dateFinished": "2020-06-08 22:12:06.168",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val posLP:RDD[LabeledPoint] \u003d posTXT.map( (twt:String) \u003d\u003e\n{\n\tval ws \u003d to_words(twt).map(w \u003d\u003e hash(w).toDouble)\n\tLabeledPoint(1.0, Vectors.dense(pad_cap(ws ,vector_fixed_size).toArray))\n})\nval negLP:RDD[LabeledPoint] \u003d negTXT.map( (twt:String) \u003d\u003e\n{\n\tval ws \u003d to_words(twt).map(w \u003d\u003e hash(w).toDouble)\n\tLabeledPoint(0.0, Vectors.dense(pad_cap(ws ,vector_fixed_size).toArray))\n})\nval data \u003d negLP ++ posLP",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:12:12.521",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "posLP: org.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint] \u003d MapPartitionsRDD[74] at map at \u003cconsole\u003e:42\nnegLP: org.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint] \u003d MapPartitionsRDD[75] at map at \u003cconsole\u003e:47\ndata: org.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint] \u003d UnionRDD[76] at $plus$plus at \u003cconsole\u003e:52\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625496170_-1125566823",
+      "id": "20200608-221136_1905038293",
+      "dateCreated": "2020-06-08 22:11:36.170",
+      "dateStarted": "2020-06-08 22:12:12.536",
+      "dateFinished": "2020-06-08 22:12:31.753",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md \n\nWe split the data into `training` and `test` sets.\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:12:42.458",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eWe split the data into \u003ccode\u003etraining\u003c/code\u003e and \u003ccode\u003etest\u003c/code\u003e sets.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625555998_500722288",
+      "id": "20200608-221235_2114295732",
+      "dateCreated": "2020-06-08 22:12:35.998",
+      "dateStarted": "2020-06-08 22:12:42.459",
+      "dateFinished": "2020-06-08 22:12:42.461",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val splits \u003d data.randomSplit(Array(0.6, 0.4), seed \u003d 11L)\nval training \u003d splits(0).cache()\nval test \u003d splits(1)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:13:07.800",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "splits: Array[org.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint]] \u003d Array(MapPartitionsRDD[77] at randomSplit at \u003cconsole\u003e:35, MapPartitionsRDD[78] at randomSplit at \u003cconsole\u003e:35)\ntraining: org.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint] \u003d MapPartitionsRDD[77] at randomSplit at \u003cconsole\u003e:35\ntest: org.apache.spark.rdd.RDD[org.apache.spark.mllib.regression.LabeledPoint] \u003d MapPartitionsRDD[78] at randomSplit at \u003cconsole\u003e:35\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625537550_1652410719",
+      "id": "20200608-221217_1918996299",
+      "dateCreated": "2020-06-08 22:12:17.550",
+      "dateStarted": "2020-06-08 22:13:07.818",
+      "dateFinished": "2020-06-08 22:13:08.217",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## Training the Model\n\nNext we feed our training data to the SVM model, for simplicity, we ignore the cross validation set.\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:13:27.938",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eTraining the Model\u003c/h2\u003e\n\u003cp\u003eNext we feed our training data to the SVM model, for simplicity, we ignore the cross validation set.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625591178_156003004",
+      "id": "20200608-221311_2020952365",
+      "dateCreated": "2020-06-08 22:13:11.178",
+      "dateStarted": "2020-06-08 22:13:27.939",
+      "dateFinished": "2020-06-08 22:13:27.941",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val numIterations \u003d 10 // epoch\nval model \u003d SVMWithSGD.train(training, numIterations)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:14:33.181",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "numIterations: Int \u003d 10\nmodel: org.apache.spark.mllib.classification.SVMModel \u003d org.apache.spark.mllib.classification.SVMModel: intercept \u003d 0.0, numFeatures \u003d 30, numClasses \u003d 2, threshold \u003d 0.0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625657347_1820755525",
+      "id": "20200608-221417_1784642801",
+      "dateCreated": "2020-06-08 22:14:17.347",
+      "dateStarted": "2020-06-08 22:14:33.202",
+      "dateFinished": "2020-06-08 22:16:01.453",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## Test the Model\n\nNow apply the trained model to the test data, to evaluate the performance of the model\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:13:53.913",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eTest the Model\u003c/h2\u003e\n\u003cp\u003eNow apply the trained model to the test data, to evaluate the performance of the model\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625609504_785662964",
+      "id": "20200608-221329_1500854866",
+      "dateCreated": "2020-06-08 22:13:29.504",
+      "dateStarted": "2020-06-08 22:13:53.914",
+      "dateFinished": "2020-06-08 22:13:53.917",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n// Clear the default threshold.\nmodel.clearThreshold()\n\n// Compute raw scores on the test set.\nval scoreAndLabels \u003d test.map { point \u003d\u003e\n\tval score \u003d model.predict(point.features)\n\t(score, point.label)\n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:16:13.120",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "scoreAndLabels: org.apache.spark.rdd.RDD[(Double, Double)] \u003d MapPartitionsRDD[132] at map at \u003cconsole\u003e:41\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625675884_-1090344001",
+      "id": "20200608-221435_1203080851",
+      "dateCreated": "2020-06-08 22:14:35.884",
+      "dateStarted": "2020-06-08 22:16:13.145",
+      "dateFinished": "2020-06-08 22:16:13.910",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md \n## Get the evaluation metrics",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:15:31.320",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eGet the evaluation metrics\u003c/h2\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625713060_-176403344",
+      "id": "20200608-221513_1883663131",
+      "dateCreated": "2020-06-08 22:15:13.060",
+      "dateStarted": "2020-06-08 22:15:31.324",
+      "dateFinished": "2020-06-08 22:15:31.342",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val metrics \u003d new BinaryClassificationMetrics(scoreAndLabels)\nval auROC \u003d metrics.areaUnderROC()\n\nprintln(\"Area under ROC \u003d \" + auROC)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:16:17.391",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Area under ROC \u003d 0.5016161616161621\nmetrics: org.apache.spark.mllib.evaluation.BinaryClassificationMetrics \u003d org.apache.spark.mllib.evaluation.BinaryClassificationMetrics@62d3959a\nauROC: Double \u003d 0.5016161616161621\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625692735_-1239346505",
+      "id": "20200608-221452_1781590048",
+      "dateCreated": "2020-06-08 22:14:52.735",
+      "dateStarted": "2020-06-08 22:16:17.411",
+      "dateFinished": "2020-06-08 22:16:58.068",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## Future Enhancement\n\nNote that the model is not performing well. We will look into how to fix it in our assignment.\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:14:05.245",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eFuture Enhancement\u003c/h2\u003e\n\u003cp\u003eNote that the model is not performing well. We will look into how to fix it in our assignment.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625355845_684612239",
+      "id": "20200608-220915_1771107628",
+      "dateCreated": "2020-06-08 22:09:15.845",
+      "dateStarted": "2020-06-08 22:14:05.247",
+      "dateFinished": "2020-06-08 22:14:05.252",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-08 22:14:05.227",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1591625645225_1227618470",
+      "id": "20200608-221405_1526883312",
+      "dateCreated": "2020-06-08 22:14:05.225",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "TweetSVMFilter",
+  "id": "2F9JJBWTT",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
